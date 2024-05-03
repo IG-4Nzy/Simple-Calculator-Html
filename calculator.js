@@ -52,7 +52,7 @@ function calculate(value) {
                 document.getElementById('result').value = newResult;
 
             }
-        } else if (result =='0') {
+        } else if (result == '0') {
             newResult = value;
             result = newResult;
             document.getElementById('result').value = newResult;
