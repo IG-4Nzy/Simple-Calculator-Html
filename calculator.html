@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    @media screen and (min-width:768px) and (max-width:1023px) {
+        .resultTxt {
+            width: 50%;
+            font-size: 36px;
+            color: yellow;
+        }
+    }
+
+    @media screen and (min-width:1024px) {
+        .resultTxt {
+            text-align: end;
+            height: 3rem;
+            width: 68%;
+            font-size: 48px;
+            background-color: transparent;
+            color: rgb(255, 0, 0);
+            border: none;
+            margin-bottom: 20px;
+        }
+    }
+
+    body {
+        background-color: black;
+        display: flex;
+        height: 70vh;
+        width: 100vw;
+        place-items: end;
+        justify-content: center;
+
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        flex-direction: column;
+
+    }
+
+    .resultTxt {
+        text-align: end;
+        height: 3rem;
+        width: 85%;
+        font-size: 48px;
+        background-color: transparent;
+        color: white;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    .buttonRow {
+        display: flex;
+        gap: 20px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        background-color: grey;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+    }
+
+    .btnSpcl {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        background-color: rgb(216, 122, 0);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+    }
+
+    .btnZero {
+        width: 140px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: rgb(216, 122, 0);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+    }
+
+    .btnText {
+        font-size: 28px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+    }
+
+    .btnTextSpcl {
+        font-size: 28px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        color: white;
+    }
+
+    .btnTextZero {
+        font-size: 28px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="reuslt">
+            <input type="text" name="result" id="result" class="resultTxt" value="0" disabled>
+        </div>
+        <div class="buttons">
+            <div class="buttonRow">
+                <div class="btn">
+                    <p class="btnText">AC</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">+/-</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">%</p>
+                </div>
+                <div class="btnSpcl">
+                    <p class="btnTextSpcl">/</p>
+                </div>
+            </div>
+            <div class="buttonRow">
+                <div class="btn">
+                    <p class="btnText">7</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">8</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">9</p>
+                </div>
+                <div class="btnSpcl">
+                    <p class="btnTextSpcl">X</p>
+                </div>
+            </div>
+            <div class="buttonRow">
+                <div class="btn">
+                    <p class="btnText">4</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">5</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">6</p>
+                </div>
+                <div class="btnSpcl">
+                    <p class="btnTextSpcl">-</p>
+                </div>
+            </div>
+            <div class="buttonRow">
+                <div class="btn">
+                    <p class="btnText">1</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">2</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">3</p>
+                </div>
+                <div class="btnSpcl">
+                    <p class="btnTextSpcl">+</p>
+                </div>
+            </div>
+            <div class="buttonRow">
+                <div class="btnZero">
+                    <p class="btnTextZero">0</p>
+                </div>
+                <div class="btn">
+                    <p class="btnText">.</p>
+                </div>
+                <div class="btnSpcl">
+                    <p class="btnTextSpcl">=</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
