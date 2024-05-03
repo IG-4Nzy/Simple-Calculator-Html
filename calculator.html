@@ -15,70 +15,70 @@
         </div>
         <div class="buttons">
             <div class="buttonRow">
-                <div class="btn">
-                    <p class="btnText">AC</p>
+                <div class="btn" onclick="calculate('ac')">
+                    <p class="btnText" id="ac">AC</p>
                 </div>
-                <div class="btn">
-                    <p class="btnText">+/-</p>
+                <div class="btn" onclick="calculate('+/-')">
+                    <p class="btnText" id="+/-">+/-</p>
                 </div>
-                <div class="btn">
-                    <p class="btnText">%</p>
+                <div class="btn" onclick="calculate('%')">
+                    <p class="btnText" id="%">%</p>
                 </div>
-                <div class="btnSpcl">
-                    <p class="btnTextSpcl">/</p>
-                </div>
-            </div>
-            <div class="buttonRow">
-                <div class="btn">
-                    <p class="btnText">7</p>
-                </div>
-                <div class="btn">
-                    <p class="btnText">8</p>
-                </div>
-                <div class="btn">
-                    <p class="btnText">9</p>
-                </div>
-                <div class="btnSpcl">
-                    <p class="btnTextSpcl">X</p>
+                <div class="btnSpcl" onclick="calculate('/')">
+                    <p class="btnTextSpcl" id="/">/</p>
                 </div>
             </div>
             <div class="buttonRow">
-                <div class="btn">
-                    <p class="btnText">4</p>
+                <div class="btn" onclick="calculate('7')">
+                    <p class="btnText" id="7">7</p>
                 </div>
-                <div class="btn">
-                    <p class="btnText">5</p>
+                <div class="btn" onclick="calculate('8')">
+                    <p class="btnText" id="8">8</p>
                 </div>
-                <div class="btn">
-                    <p class="btnText">6</p>
+                <div class="btn" onclick="calculate('9')">
+                    <p class="btnText" id="9">9</p>
                 </div>
-                <div class="btnSpcl">
-                    <p class="btnTextSpcl">-</p>
-                </div>
-            </div>
-            <div class="buttonRow">
-                <div class="btn">
-                    <p class="btnText">1</p>
-                </div>
-                <div class="btn">
-                    <p class="btnText">2</p>
-                </div>
-                <div class="btn">
-                    <p class="btnText">3</p>
-                </div>
-                <div class="btnSpcl">
-                    <p class="btnTextSpcl">+</p>
+                <div class="btnSpcl" onclick="calculate('X')">
+                    <p class="btnTextSpcl" id="X">X</p>
                 </div>
             </div>
             <div class="buttonRow">
-                <div class="btnZero">
-                    <p class="btnTextZero">0</p>
+                <div class="btn" onclick="calculate('4')">
+                    <p class="btnText" id="4">4</p>
                 </div>
-                <div class="btn">
-                    <p class="btnText">.</p>
+                <div class="btn" onclick="calculate('5')">
+                    <p class="btnText" id="5">5</p>
                 </div>
-                <div class="btnSpcl">
-                    <p class="btnTextSpcl">=</p>
+                <div class="btn" onclick="calculate('6')">
+                    <p class="btnText" id="6">6</p>
+                </div>
+                <div class="btnSpcl" onclick="calculate('-')">
+                    <p class="btnTextSpcl" id="-">-</p>
+                </div>
+            </div>
+            <div class="buttonRow">
+                <div class="btn" onclick="calculate('1')">
+                    <p class="btnText" id="1">1</p>
+                </div>
+                <div class="btn" onclick="calculate('2')">
+                    <p class="btnText" id="2">2</p>
+                </div>
+                <div class="btn" onclick="calculate('3')">
+                    <p class="btnText" id="3">3</p>
+                </div>
+                <div class="btnSpcl" onclick="calculate('+')">
+                    <p class="btnTextSpcl" id="+">+</p>
+                </div>
+            </div>
+            <div class="buttonRow">
+                <div class="btnZero" onclick="calculate('0')">
+                    <p class="btnTextZero" id="0">0</p>
+                </div>
+                <div class="btn" onclick="calculate('.')">
+                    <p class="btnText" id=".">.</p>
+                </div>
+                <div class="btnSpcl" onclick="calculate('=')">
+                    <p class="btnTextSpcl" id="=">=</p>
                 </div>
             </div>
         </div>
@@ -86,6 +86,12 @@
 
 </body>
 <script>
-    
+    function calculate(value) {
+        var result = document.getElementById('result').value;
+        console.log(result);
+        
+        
+    }
 </script>
+
 </html>
