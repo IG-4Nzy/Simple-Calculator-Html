@@ -36,9 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-
-
     function startHold() {
         timer = setTimeout(function () {
             heldDown = true;
