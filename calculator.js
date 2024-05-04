@@ -7,6 +7,30 @@ var firstNum = '';
 var secondNum = '';
 var length = '';
 
+document.addEventListener("DOMContentLoaded", function () {
+    var button = document.getElementById("ac");
+    var timer;
+    var heldDown = false; // Flag to track if the button is held down
+
+    button.addEventListener("mousedown", function () {
+        timer = setTimeout(function () {
+            heldDown = true;
+            console.log('Holded');
+            allclear();
+        }, 200);
+    });
+
+    button.addEventListener("mouseup", function () {
+        if (!heldDown) {
+            console.log('Clicked');
+            clear();
+        }
+        clearTimeout(timer);
+        heldDown = false; // Reset the flag
+    });
+});
+
+
 
 
 function calculate(value) {
@@ -76,15 +100,16 @@ function calculate(value) {
         makeCalculation()
         op = '';
     }
-    else if (value == 'ac') {
-        op = '';
-        newResult = '0';
-        op2 = '';
-        firstNum = '';
-        secondNum = '';
-        result = '0';
-        document.getElementById('result').value = newResult;
-    } else if (value == '.') {
+    // else if (value == 'ac') {
+    //     op = '';
+    //     newResult = '0';
+    //     op2 = '';
+    //     firstNum = '';
+    //     secondNum = '';
+    //     result = '0';
+    //     document.getElementById('result').value = newResult;
+    // } 
+    else if (value == '.') {
         length = result.length;
         if (result.substring(length - 1) == '.') {
             console.log('err');
@@ -175,4 +200,22 @@ function makeCalculation(a, b) {
             document.getElementById('result').value = newResult;
             break;
     }
+}
+
+
+function allclear() {
+    op = '';
+    newResult = '0';
+    op2 = '';
+    firstNum = '';
+    secondNum = '';
+    result = '0';
+    document.getElementById('result').value = newResult;
+}
+function clear() {
+    result = document.getElementById('result').value;
+    var length = result.length;
+    newResult = result.substring(0, length - 1);
+    document.getElementById('result').value = newResult;
+    result = newResult;
 }
