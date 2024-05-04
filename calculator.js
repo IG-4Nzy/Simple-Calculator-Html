@@ -11,12 +11,35 @@ document.addEventListener("DOMContentLoaded", function () {
     var button = document.getElementById("ac");
     var timer;
     var heldDown = false;
+    var width = window.innerWidth
 
+    button.addEventListener('touchstart', function (event) {
+        if (width >= 300 && width < 1024) {
+            console.log('mobile');
+            startHold();
+        }
+    });
+    button.addEventListener('touchend', function (event) {
+        if (width >= 300 && width < 1024) {
+            console.log('mobile');
+            endHold();
+        }
+    });
 
-    button.addEventListener('mousedown', startHold);
-    button.addEventListener('touchstart', startHold);
-    button.addEventListener('mouseup', endHold);
-    button.addEventListener('touchend', endHold);
+    button.addEventListener('mousedown', function (event) {
+        if (width >= 1024 ) {
+            console.log('desktop');
+            startHold();
+        }
+    });
+
+    button.addEventListener('mouseup', function (event) {
+        if (width >= 1024) {
+            console.log('desktop');
+            endHold();
+        }
+    });
+
 
 
 
@@ -217,7 +240,7 @@ function clear() {
     result = document.getElementById('result').value;
     length = result.length;
     if (length > 1) {
-        string = result[length-1];
+        string = result[length - 1];
         console.log(string);
         var length = result.length;
         if (string == '+' || string == '-' || string == 'x' || string == '/' || string == '%') {
