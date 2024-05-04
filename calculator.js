@@ -15,27 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     button.addEventListener('touchstart', function (event) {
         if (width >= 300 && width < 1024) {
-            console.log('mobile');
             startHold();
         }
     });
     button.addEventListener('touchend', function (event) {
         if (width >= 300 && width < 1024) {
-            console.log('mobile');
             endHold();
         }
     });
 
     button.addEventListener('mousedown', function (event) {
         if (width >= 1024) {
-            console.log('desktop');
             startHold();
         }
     });
 
     button.addEventListener('mouseup', function (event) {
         if (width >= 1024) {
-            console.log('desktop');
             endHold();
         }
     });
@@ -46,14 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function startHold() {
         timer = setTimeout(function () {
             heldDown = true;
-            console.log('Holded');
             allclear();
         }, 200);
     };
 
     function endHold() {
         if (!heldDown) {
-            console.log('Clicked');
             clear();
         }
         clearTimeout(timer);
@@ -248,12 +242,10 @@ function clear() {
     length = result.length;
     if (length > 1) {
         string = result[length - 1];
-        console.log(string);
         var length = result.length;
         if (string == '+' || string == '-' || string == 'x' || string == '/' || string == '%') {
             op = '';
             op2 = '';
-            console.log('match');
         }
         newResult = result.substring(0, length - 1);
         document.getElementById('result').value = newResult;
