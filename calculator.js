@@ -10,25 +10,34 @@ var length = '';
 document.addEventListener("DOMContentLoaded", function () {
     var button = document.getElementById("ac");
     var timer;
-    var heldDown = false; // Flag to track if the button is held down
+    var heldDown = false;
 
-    button.addEventListener("mousedown", function () {
+
+    button.addEventListener('mousedown', startHold);
+    button.addEventListener('touchstart', startHold);
+    button.addEventListener('mouseup', endHold);
+    button.addEventListener('touchend', endHold);
+
+
+
+    function startHold() {
         timer = setTimeout(function () {
             heldDown = true;
             console.log('Holded');
             allclear();
         }, 200);
-    });
+    };
 
-    button.addEventListener("mouseup", function () {
+    function endHold() {
         if (!heldDown) {
             console.log('Clicked');
             clear();
         }
         clearTimeout(timer);
-        heldDown = false; // Reset the flag
-    });
+        heldDown = false;
+    };
 });
+
 
 
 
@@ -100,15 +109,7 @@ function calculate(value) {
         makeCalculation()
         op = '';
     }
-    // else if (value == 'ac') {
-    //     op = '';
-    //     newResult = '0';
-    //     op2 = '';
-    //     firstNum = '';
-    //     secondNum = '';
-    //     result = '0';
-    //     document.getElementById('result').value = newResult;
-    // } 
+
     else if (value == '.') {
         length = result.length;
         if (result.substring(length - 1) == '.') {
@@ -216,7 +217,14 @@ function clear() {
     result = document.getElementById('result').value;
     length = result.length;
     if (length > 1) {
+        string = result[length-1];
+        console.log(string);
         var length = result.length;
+        if (string == '+' || string == '-' || string == 'x' || string == '/' || string == '%') {
+            op = '';
+            op2 = '';
+            console.log('match');
+        }
         newResult = result.substring(0, length - 1);
         document.getElementById('result').value = newResult;
         result = newResult;
