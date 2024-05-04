@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     button.addEventListener('mousedown', function (event) {
-        if (width >= 1024 ) {
+        if (width >= 1024) {
             console.log('desktop');
             startHold();
         }
@@ -179,8 +179,13 @@ function makeCalculation(a, b) {
         case 'x':
             newResult = num1 * num2;
             firstNum = newResult.toString();
+            if (firstNum.includes('.')) {
+                rounded = newResult.toFixed(2);
+                newResult = rounded;
+            }
+            firstNum = newResult.toString();
             secondNum = '';
-            result = newResult.toString();
+            result = firstNum;
             newResult = newResult + op2;
             result = newResult;
             document.getElementById('result').value = newResult;
@@ -188,6 +193,8 @@ function makeCalculation(a, b) {
             break;
         case '/':
             newResult = num1 / num2;
+            var rounded = newResult.toFixed(2);
+            newResult = rounded;
             firstNum = newResult.toString();
             secondNum = '';
             result = newResult.toString();
