@@ -214,8 +214,19 @@ function allclear() {
 }
 function clear() {
     result = document.getElementById('result').value;
-    var length = result.length;
-    newResult = result.substring(0, length - 1);
-    document.getElementById('result').value = newResult;
-    result = newResult;
+    length = result.length;
+    if (length > 1) {
+        var length = result.length;
+        newResult = result.substring(0, length - 1);
+        document.getElementById('result').value = newResult;
+        result = newResult;
+    } else if (length == 1) {
+        op = '';
+        newResult = '0';
+        op2 = '';
+        firstNum = '';
+        secondNum = '';
+        result = '0';
+        document.getElementById('result').value = newResult;
+    }
 }
