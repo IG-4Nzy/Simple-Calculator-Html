@@ -54,9 +54,14 @@ function calculate(value) {
                     console.log('err');
                 }
                 else if (result == '0') {
-                    newResult = value;
-                    result = newResult;
-                    document.getElementById('result').value = newResult;
+                    if (value == '.') {
+                        newResult = value;
+                        result = newResult;
+                        document.getElementById('result').value = newResult;
+                    } else {
+                        console.log('err');
+                    }
+
                 } else {
                     op = value;
                     firstNum = result;
