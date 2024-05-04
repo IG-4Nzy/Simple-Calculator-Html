@@ -151,6 +151,7 @@ function calculate(value) {
 
 
 function makeCalculation(a, b) {
+    result = result.toString();
     if (result.includes('.')) {
         var num1 = parseFloat(a);
         var num2 = parseFloat(b);
